@@ -1,6 +1,9 @@
+reader = (name) ->
+  return ->
+    readOnlyValue = undefined
+    readOnlyValue = @env[name] if @env[name] != undefined
+    readOnlyValue
+
 module.exports.readOnly = (target, env) ->
   for key, value of env
-    readOnlyValue = undefined
-    readOnlyValue = env[value] if env[value] != undefined
-
-    Object.defineProperty target, key, value: readOnlyValue
+    Object.defineProperty target, key, get: reader(value)
