@@ -3,9 +3,9 @@ describe 'Travis', ->
     @env = new Env fixtures.travis
     @travis = new Travis @env
 
-  describe 'isCurrent', ->
+  describe 'isMatch', ->
     it 'return true', ->
-      expect(@travis.isCurrent()).to.be.true
+      expect(@travis.isMatch()).to.be.true
 
   describe 'branch', ->
     it 'return branch name', ->
