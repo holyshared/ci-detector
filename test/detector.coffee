@@ -1,7 +1,14 @@
-describe 'Detector', ->
-  beforeEach ->
-    @detector = new Detector(CI: 'true', TRAVIS: 'true')
+describe 'detector', ->
+  context 'when travis enviroment', ->
+    beforeEach ->
+      @travis = detector(CI: 'true', TRAVIS: 'true')
 
-  it 'return travis-ci enviroment object', ->
-    @travis = @detector.detect()
-    expect(@travis.name).to.be.equal 'travis'
+    it 'return travis-ci enviroment object', ->
+      expect(@travis.name).to.be.equal 'travis'
+
+  context 'when drone enviroment', ->
+    beforeEach ->
+      @drone = detector(CI: 'true', DRONE: 'true')
+
+    it 'return drone enviroment object', ->
+      expect(@drone.name).to.be.equal 'drone'
