@@ -1,6 +1,7 @@
 ci-detector
 ================================
 
+[![npm version](https://badge.fury.io/js/ci-detector.svg)](http://badge.fury.io/js/ci-detector)
 [![Build Status](https://drone.io/github.com/holyshared/ci-detector/status.png)](https://drone.io/github.com/holyshared/ci-detector/latest)
 
 Usage
