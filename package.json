@@ -1,6 +1,6 @@
 {
   "name": "ci-detector",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": ["detector", "ci", "server", "env", "abstraction"],
   "description": "Detect the CI server environment",
   "main": "lib/detector.js",
