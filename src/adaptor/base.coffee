@@ -1,7 +1,7 @@
 class Base
   constructor: (env) ->
     @env = env
-  isCurrent: ->
+  isMatch: ->
     @ci && @current
 
 Object.defineProperty Base::, 'ci', get: ->

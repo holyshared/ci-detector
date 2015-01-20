@@ -3,9 +3,9 @@ describe 'Drone', ->
     @env = new Env CI:'true', DRONE:'true'
     @drone = new Drone @env
 
-  describe 'isCurrent', ->
+  describe 'isMatch', ->
     it 'return true', ->
-      expect(@drone.isCurrent()).to.be.true
+      expect(@drone.isMatch()).to.be.true
 
   describe 'ci', ->
     context 'when CI=true' , ->
