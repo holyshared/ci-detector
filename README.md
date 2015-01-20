@@ -23,6 +23,7 @@ Support ci services
 * [Travis CI](https://travis-ci.org/)
 * [Drone.IO](https://drone.io/)
 * [CircleCI](https://circleci.com/)
+* [Codeship](https://codeship.com)
 
 Enviroment properties
 -----------------------------------------
