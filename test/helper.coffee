@@ -6,5 +6,6 @@ global.Drone = require '../lib/adaptor/drone'
 
 fixtures = {}
 fixtures.travis = require './fixtures/travis'
+fixtures.drone = require './fixtures/drone'
 
 global.fixtures = fixtures
