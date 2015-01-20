@@ -1,6 +1,6 @@
 reader = (name) ->
   return ->
-    readOnlyValue = undefined
+    readOnlyValue = null
     readOnlyValue = @env[name] if @env[name] != undefined
     readOnlyValue
 

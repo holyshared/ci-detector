@@ -58,9 +58,9 @@ describe 'Drone', ->
       it 'return true', ->
         expect(@drone.current).to.be.true
 
-    context 'when Drone=false' , ->
+    context 'when DRONE=false' , ->
       beforeEach ->
-        @env = new Env Drone:'false'
+        @env = new Env DRONE:'false'
         @drone = new Drone @env
 
       it 'return false', ->
