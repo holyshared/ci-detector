@@ -1,14 +1,9 @@
+Base = require('./base')
 readOnly = require('../util').readOnly
 
-class Travis
-  constructor: (env) ->
-    @env = env
-  isCurrent: ->
-    @ci && @current
+class Travis extends Base
 
-Object.defineProperty Travis::, 'ci', get: ->
-  if @env.CI == 'true' then true else false
-
+Object.defineProperty Travis::, 'name', value: 'travis'
 Object.defineProperty Travis::, 'current', get: ->
   if @env.TRAVIS == 'true' then true else false
 

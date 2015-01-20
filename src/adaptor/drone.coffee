@@ -3,17 +3,12 @@
 #DRONE_BUILD_URL
 #DRONE_BUILD_DIR
 
+Base = require('./base')
 readOnly = require('../util').readOnly
 
-class Drone
-  constructor: (env) ->
-    @env = env
-  isCurrent: ->
-    @ci && @current
+class Drone extends Base
 
-Object.defineProperty Drone::, 'ci', get: ->
-  if @env.CI == 'true' then true else false
-
+Object.defineProperty Drone::, 'name', value: 'drone'
 Object.defineProperty Drone::, 'current', get: ->
   if @env.DRONE == 'true' then true else false
 

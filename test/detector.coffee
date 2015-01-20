@@ -4,5 +4,4 @@ describe 'Detector', ->
 
   it 'return travis-ci enviroment object', ->
     @travis = @detector.detect()
-    expect(@travis.CI).to.be.equal 'true'
-    expect(@travis.TRAVIS).to.be.equal 'true'
+    expect(@travis.name).to.be.equal 'travis'
