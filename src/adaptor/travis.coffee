@@ -1,9 +1,4 @@
-defineProperty = (target, env) ->
-  for key, value of env
-    readOnlyValue = undefined
-    readOnlyValue = env[value] if env[value] != undefined
-
-    Object.defineProperty target, key, value: readOnlyValue
+readOnly = require('../util').readOnly
 
 class Travis
   constructor: (env) ->
@@ -17,7 +12,7 @@ Object.defineProperty Travis::, 'ci', get: ->
 Object.defineProperty Travis::, 'current', get: ->
   if @env.TRAVIS == 'true' then true else false
 
-defineProperty Travis::, {
+readOnly Travis::, {
   branch: 'TRAVIS_BRANCH',
   commit: 'TRAVIS_COMMIT',
   buildId: 'TRAVIS_BUILD_ID' 
