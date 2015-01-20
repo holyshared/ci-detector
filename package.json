@@ -11,7 +11,7 @@
   "description": "Detect the CI server environment",
   "main": "lib/detector.js",
   "scripts": {
-    "test": "multi='spec=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/.bin/mocha --recursive test",
+    "test": "multi='spec=- mocha-tcov-reporter=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/.bin/mocha --recursive test",
     "build": "./node_modules/.bin/gulp build",
     "watch": "./node_modules/.bin/gulp watch",
     "codeclimate": "./node_modules/.bin/codeclimate < coverage/report.lcov"
@@ -38,6 +38,7 @@
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
     "mocha-multi": "^0.6.0",
+    "mocha-tcov-reporter": "0.0.3",
     "sinon": "^1.12.2"
   },
   "config": {
