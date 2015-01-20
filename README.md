@@ -20,8 +20,9 @@ util.log(env.commit); //1d3b5371ef1851caf256773efb9deb9e27875272
 
 Support ci services
 -----------------------------------------
-* [travis-ci](https://travis-ci.org/)
-* [drone.io](https://drone.io/)
+* [Travis CI](https://travis-ci.org/)
+* [Drone.IO](https://drone.io/)
+* [CircleCI](https://circleci.com/)
 
 Enviroment properties
 -----------------------------------------
