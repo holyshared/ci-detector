@@ -1,2 +1,3 @@
--R spec
+-r blanket
+-R mocha-multi
 --compilers coffee:coffee-script/register
