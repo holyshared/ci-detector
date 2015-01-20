@@ -1,5 +1,3 @@
-Env = require '../lib/env'
-
 describe 'Env', ->
   describe 'constructor', ->
     beforeEach ->

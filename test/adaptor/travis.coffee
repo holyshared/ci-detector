@@ -1,6 +1,3 @@
-Env = require '../../lib/env'
-Travis = require '../../lib/adaptor/travis'
-
 describe 'Travis', ->
   beforeEach ->
     @env = new Env CI:'true', TRAVIS:'true'

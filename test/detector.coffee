@@ -1,5 +1,3 @@
-Detector = require '../lib/detector'
-
 describe 'Detector', ->
   beforeEach ->
     @detector = new Detector(CI: 'true', TRAVIS: 'true')
