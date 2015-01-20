@@ -9,3 +9,6 @@ gulp.task 'build', ->
     .pipe coffee({ bare: true }).on('error', gutil.log)
     .pipe sourcemap.write('../sourcemap')
     .pipe gulp.dest 'lib/'
+
+gulp.task 'watch', ->
+  gulp.watch './src/**/*.coffee', ['build']
