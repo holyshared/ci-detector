@@ -1,8 +1,9 @@
 {
   "name": "ci-detector",
   "version": "0.0.1",
-  "description": "ci-detector",
-  "main": "index.js",
+  "keywords": ["detector", "ci", "server", "env", "abstraction"],
+  "description": "Detect the CI server environment",
+  "main": "lib/detector.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --recursive test",
     "build": "./node_modules/.bin/gulp build",
@@ -12,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/holyshared/ci-detector"
   },
-  "author": "",
+  "author": "Noritaka Horio <holy.shared.design@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/holyshared/ci-detector/issues"
