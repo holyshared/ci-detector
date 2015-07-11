@@ -6,12 +6,12 @@ describe 'detector', ->
     it 'return travis-ci enviroment object', ->
       expect(@travis.name).to.be.equal 'travis-ci'
 
-  context 'when drone enviroment', ->
+  context 'when drone.io enviroment', ->
     beforeEach ->
       @drone = detector(CI: 'true', DRONE: 'true')
 
-    it 'return drone enviroment object', ->
-      expect(@drone.name).to.be.equal 'drone'
+    it 'return drone.io enviroment object', ->
+      expect(@drone.name).to.be.equal 'drone.io'
 
   context 'when circle-ci enviroment', ->
     beforeEach ->

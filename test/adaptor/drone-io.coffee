@@ -1,7 +1,7 @@
-describe 'Drone', ->
+describe 'DroneIO', ->
   beforeEach ->
     @env = new Env fixtures.drone
-    @drone = new Drone @env
+    @drone = new DroneIO @env
 
   describe 'isMatch', ->
     it 'return true', ->
@@ -36,7 +36,7 @@ describe 'Drone', ->
     context 'when CI=true' , ->
       beforeEach ->
         @env = new Env CI:'true'
-        @drone = new Drone @env
+        @drone = new DroneIO @env
 
       it 'return true', ->
         expect(@drone.ci).to.be.true
@@ -44,7 +44,7 @@ describe 'Drone', ->
     context 'when CI=false' , ->
       beforeEach ->
         @env = new Env CI:'false'
-        @drone = new Drone @env
+        @drone = new DroneIO @env
 
       it 'return false', ->
         expect(@drone.ci).to.be.false
@@ -53,7 +53,7 @@ describe 'Drone', ->
     context 'when DRONE=true' , ->
       beforeEach ->
         @env = new Env DRONE:'true'
-        @drone = new Drone @env
+        @drone = new DroneIO @env
 
       it 'return true', ->
         expect(@drone.current).to.be.true
@@ -61,7 +61,7 @@ describe 'Drone', ->
     context 'when DRONE=false' , ->
       beforeEach ->
         @env = new Env DRONE:'false'
-        @drone = new Drone @env
+        @drone = new DroneIO @env
 
       it 'return false', ->
         expect(@drone.current).to.be.false

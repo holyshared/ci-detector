@@ -1,5 +1,5 @@
 exports = module.exports
 exports.travisCI = require './travis-ci'
-exports.drone = require './drone'
+exports.droneIO = require './drone-io'
 exports.circleCI = require './circle-ci'
 exports.codeship = require './codeship'

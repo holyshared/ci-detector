@@ -6,19 +6,19 @@
 Base = require('./base')
 readOnly = require('../util').readOnly
 
-class Drone extends Base
+class DroneIO extends Base
 
-Object.defineProperty Drone::, 'name', value: 'drone'
-Object.defineProperty Drone::, 'current', get: ->
+Object.defineProperty DroneIO::, 'name', value: 'drone.io'
+Object.defineProperty DroneIO::, 'current', get: ->
   if @env.DRONE == 'true' then true else false
 
-readOnly Drone::, {
+readOnly DroneIO::, {
   branch: 'DRONE_BRANCH',
   commit: 'DRONE_COMMIT',
-  buildId: 'DRONE_BUILD_NUMBER' 
+  buildId: 'DRONE_BUILD_NUMBER'
   buildNumber: 'DRONE_BUILD_NUMBER'
   buildJobId: 'DRONE_BUILD_NUMBER'
   buildJobNumber: 'DRONE_BUILD_NUMBER'
 }
 
-module.exports = Drone
+module.exports = DroneIO
