@@ -4,7 +4,7 @@ describe 'detector', ->
       @travis = detector(CI: 'true', TRAVIS: 'true')
 
     it 'return travis-ci enviroment object', ->
-      expect(@travis.name).to.be.equal 'travis'
+      expect(@travis.name).to.be.equal 'travis-ci'
 
   context 'when drone enviroment', ->
     beforeEach ->

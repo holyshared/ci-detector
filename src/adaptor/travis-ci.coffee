@@ -1,19 +1,19 @@
 Base = require('./base')
 readOnly = require('../util').readOnly
 
-class Travis extends Base
+class TravisCI extends Base
 
-Object.defineProperty Travis::, 'name', value: 'travis'
-Object.defineProperty Travis::, 'current', get: ->
+Object.defineProperty TravisCI::, 'name', value: 'travis-ci'
+Object.defineProperty TravisCI::, 'current', get: ->
   if @env.TRAVIS == 'true' then true else false
 
-readOnly Travis::, {
+readOnly TravisCI::, {
   branch: 'TRAVIS_BRANCH',
   commit: 'TRAVIS_COMMIT',
-  buildId: 'TRAVIS_BUILD_ID' 
+  buildId: 'TRAVIS_BUILD_ID'
   buildNumber: 'TRAVIS_BUILD_NUMBER'
   buildJobId: 'TRAVIS_JOB_ID'
   buildJobNumber: 'TRAVIS_JOB_NUMBER'
 }
 
-module.exports = Travis
+module.exports = TravisCI

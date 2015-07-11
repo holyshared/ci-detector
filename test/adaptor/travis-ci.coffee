@@ -1,7 +1,7 @@
-describe 'Travis', ->
+describe 'TravisCI', ->
   beforeEach ->
     @env = new Env fixtures.travis
-    @travis = new Travis @env
+    @travis = new TravisCI @env
 
   describe 'isMatch', ->
     it 'return true', ->
@@ -35,7 +35,7 @@ describe 'Travis', ->
     context 'when CI=true' , ->
       beforeEach ->
         @env = new Env CI:'true'
-        @travis = new Travis @env
+        @travis = new TravisCI @env
 
       it 'return true', ->
         expect(@travis.ci).to.be.true
@@ -43,7 +43,7 @@ describe 'Travis', ->
     context 'when CI=false' , ->
       beforeEach ->
         @env = new Env CI:'false'
-        @travis = new Travis @env
+        @travis = new TravisCI @env
 
       it 'return false', ->
         expect(@travis.ci).to.be.false
@@ -52,7 +52,7 @@ describe 'Travis', ->
     context 'when TRAVIS=true' , ->
       beforeEach ->
         @env = new Env TRAVIS:'true'
-        @travis = new Travis @env
+        @travis = new TravisCI @env
 
       it 'return true', ->
         expect(@travis.current).to.be.true
@@ -60,7 +60,7 @@ describe 'Travis', ->
     context 'when TRAVIS=false' , ->
       beforeEach ->
         @env = new Env TRAVIS:'false'
-        @travis = new Travis @env
+        @travis = new TravisCI @env
 
       it 'return false', ->
         expect(@travis.current).to.be.false
