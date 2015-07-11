@@ -2,7 +2,7 @@ ci-detector
 ================================
 
 [![npm version](https://badge.fury.io/js/ci-detector.svg)](http://badge.fury.io/js/ci-detector)
-[![Build Status](https://drone.io/github.com/holyshared/ci-detector/status.png)](https://drone.io/github.com/holyshared/ci-detector/latest)
+[![Build Status](https://travis-ci.org/holyshared/ci-detector.svg?branch=develop)](https://travis-ci.org/holyshared/ci-detector)
 [![Test Coverage](https://codeclimate.com/github/holyshared/ci-detector/badges/coverage.svg)](https://codeclimate.com/github/holyshared/ci-detector)
 [![Code Climate](https://codeclimate.com/github/holyshared/ci-detector/badges/gpa.svg)](https://codeclimate.com/github/holyshared/ci-detector)
 [![Dependency Status](https://gemnasium.com/holyshared/ci-detector.svg)](https://gemnasium.com/holyshared/ci-detector)
