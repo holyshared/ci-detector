@@ -1,7 +1,7 @@
-describe 'Circle', ->
+describe 'CircleCI', ->
   beforeEach ->
     @env = new Env fixtures.circle
-    @ci = new Circle @env
+    @ci = new CircleCI @env
 
   describe 'isMatch', ->
     it 'return true', ->
@@ -36,7 +36,7 @@ describe 'Circle', ->
     context 'when CI=true' , ->
       beforeEach ->
         @env = new Env CI:'true'
-        @ci = new Circle @env
+        @ci = new CircleCI @env
 
       it 'return true', ->
         expect(@ci.ci).to.be.true
@@ -44,7 +44,7 @@ describe 'Circle', ->
     context 'when CI=false' , ->
       beforeEach ->
         @env = new Env CI:'false'
-        @ci = new Circle @env
+        @ci = new CircleCI @env
 
       it 'return false', ->
         expect(@ci.ci).to.be.false
@@ -53,7 +53,7 @@ describe 'Circle', ->
     context 'when CIRCLECI=true' , ->
       beforeEach ->
         @env = new Env CIRCLECI:'true'
-        @ci = new Circle @env
+        @ci = new CircleCI @env
 
       it 'return true', ->
         expect(@ci.current).to.be.true
@@ -61,7 +61,7 @@ describe 'Circle', ->
     context 'when CIRCLECI=false' , ->
       beforeEach ->
         @env = new Env CIRCLECI:'false'
-        @ci = new Circle @env
+        @ci = new CircleCI @env
 
       it 'return false', ->
         expect(@ci.current).to.be.false

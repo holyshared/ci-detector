@@ -3,7 +3,7 @@ global.detector = require '../lib/detector'
 global.Env = require '../lib/env'
 global.Travis = require '../lib/adaptor/travis'
 global.Drone = require '../lib/adaptor/drone'
-global.Circle = require '../lib/adaptor/circle'
+global.CircleCI = require '../lib/adaptor/circle-ci'
 global.Codeship = require '../lib/adaptor/codeship'
 
 fixtures = {}
