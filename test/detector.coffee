@@ -19,3 +19,10 @@ describe 'detector', ->
 
     it 'return circle-ci enviroment object', ->
       expect(@ci.name).to.be.equal 'circle-ci'
+
+  context 'when codeship enviroment', ->
+    beforeEach ->
+      @ci = detector CI:"true", CI_NAME: "codeship"
+
+    it 'return codeship enviroment object', ->
+      expect(@ci.name).to.be.equal 'codeship'
