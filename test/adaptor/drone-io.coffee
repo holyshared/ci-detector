@@ -1,6 +1,6 @@
 describe 'DroneIO', ->
   beforeEach ->
-    @env = new Env fixtures.drone
+    @env = new Env fixtures.droneIO
     @drone = new DroneIO @env
 
   describe 'isMatch', ->

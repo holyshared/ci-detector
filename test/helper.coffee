@@ -8,7 +8,7 @@ global.Codeship = require '../lib/adaptor/codeship'
 
 fixtures = {}
 fixtures.travisCI = require './fixtures/travis-ci'
-fixtures.drone = require './fixtures/drone'
+fixtures.droneIO = require './fixtures/drone-io'
 fixtures.circleCI = require './fixtures/circle-ci'
 fixtures.codeship = require './fixtures/codeship'
 
