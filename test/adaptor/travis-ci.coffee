@@ -1,6 +1,6 @@
 describe 'TravisCI', ->
   beforeEach ->
-    @env = new Env fixtures.travis
+    @env = new Env fixtures.travisCI
     @travis = new TravisCI @env
 
   describe 'isMatch', ->
