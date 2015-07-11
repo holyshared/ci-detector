@@ -12,3 +12,10 @@ describe 'detector', ->
 
     it 'return drone enviroment object', ->
       expect(@drone.name).to.be.equal 'drone'
+
+  context 'when circle-ci enviroment', ->
+    beforeEach ->
+      @ci = detector CIRCLECI: 'true'
+
+    it 'return circle-ci enviroment object', ->
+      expect(@ci.name).to.be.equal 'circle-ci'
