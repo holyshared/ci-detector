@@ -1,6 +1,6 @@
 describe 'CircleCI', ->
   beforeEach ->
-    @env = new Env fixtures.circle
+    @env = new Env fixtures.circleCI
     @ci = new CircleCI @env
 
   describe 'isMatch', ->
