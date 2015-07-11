@@ -7,7 +7,7 @@ detector = (env) ->
 
   for name, Adaptor of adaptors
     adaptor = new Adaptor @env
-    continue unless adaptor.isMatch()
+    continue unless adaptor.current
     detectAdaptor = adaptor
     break
   detectAdaptor

@@ -4,11 +4,25 @@ describe 'detector', ->
       @travis = detector(CI: 'true', TRAVIS: 'true')
 
     it 'return travis-ci enviroment object', ->
-      expect(@travis.name).to.be.equal 'travis'
+      expect(@travis.name).to.be.equal 'travis-ci'
 
-  context 'when drone enviroment', ->
+  context 'when drone.io enviroment', ->
     beforeEach ->
       @drone = detector(CI: 'true', DRONE: 'true')
 
-    it 'return drone enviroment object', ->
-      expect(@drone.name).to.be.equal 'drone'
+    it 'return drone.io enviroment object', ->
+      expect(@drone.name).to.be.equal 'drone.io'
+
+  context 'when circle-ci enviroment', ->
+    beforeEach ->
+      @ci = detector CIRCLECI: 'true'
+
+    it 'return circle-ci enviroment object', ->
+      expect(@ci.name).to.be.equal 'circle-ci'
+
+  context 'when codeship enviroment', ->
+    beforeEach ->
+      @ci = detector CI:"true", CI_NAME: "codeship"
+
+    it 'return codeship enviroment object', ->
+      expect(@ci.name).to.be.equal 'codeship'
