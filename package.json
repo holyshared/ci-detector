@@ -46,5 +46,8 @@
       "pattern": "/lib/",
       "data-cover-never": "/node_modules/"
     }
+  },
+  "dependencies": {
+    "lodash": "^3.10.0"
   }
 }
