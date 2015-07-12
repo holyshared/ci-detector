@@ -15,9 +15,9 @@ You do not need to worry about the difference of environment variables of ci ser
 
 ```javascript
 var util = require('util');
-var detector = require('detector');
-var env = detector(process.env);
-util.log(env.name); //travis
+var detector = require('ci-detector');
+var env = detector.lookup(process.env);
+util.log(env.name); //travis-ci
 util.log(env.branch); //master
 util.log(env.commit); //1d3b5371ef1851caf256773efb9deb9e27875272
 ```
