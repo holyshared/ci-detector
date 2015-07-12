@@ -7,6 +7,8 @@ Base = require('./base')
 readOnly = require('../util').readOnly
 
 class DroneIO extends Base
+  isCurrentEnv: ->
+    @ci && @current
 
 Object.defineProperty DroneIO::, 'name', value: 'drone.io'
 Object.defineProperty DroneIO::, 'current', get: ->

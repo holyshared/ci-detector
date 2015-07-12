@@ -3,9 +3,9 @@ describe 'Codeship', ->
     @env = fixtures.codeship
     @ci = new Codeship @env
 
-  describe 'isMatch', ->
+  describe 'isCurrentEnv', ->
     it 'return true', ->
-      expect(@ci.isMatch()).to.be.true
+      expect(@ci.isCurrentEnv()).to.be.true
 
   describe 'branch', ->
     it 'return branch name', ->

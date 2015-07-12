@@ -3,9 +3,9 @@ describe 'DroneIO', ->
     @env = fixtures.droneIO
     @drone = new DroneIO @env
 
-  describe 'isMatch', ->
+  describe 'isCurrentEnv', ->
     it 'return true', ->
-      expect(@drone.isMatch()).to.be.true
+      expect(@drone.isCurrentEnv()).to.be.true
 
   describe 'branch', ->
     it 'return branch name', ->

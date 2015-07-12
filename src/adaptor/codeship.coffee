@@ -4,6 +4,8 @@ readOnly = require('../util').readOnly
 CI_NAME = "codeship"
 
 class Codeship extends Base
+  isCurrentEnv: ->
+    @ci && @current
 
 Object.defineProperty Codeship::, 'name', value: CI_NAME
 Object.defineProperty Codeship::, 'current', get: ->
@@ -12,7 +14,7 @@ Object.defineProperty Codeship::, 'current', get: ->
 readOnly Codeship::, {
   branch: 'CI_BRANCH',
   commit: 'CI_COMMIT_ID',
-  buildId: 'CI_BUILD_NUMBER' 
+  buildId: 'CI_BUILD_NUMBER'
   buildNumber: 'CI_BUILD_NUMBER'
   buildJobId: 'CI_BUILD_NUMBER'
   buildJobNumber: 'CI_BUILD_NUMBER'

@@ -15,7 +15,7 @@ describe 'ci-detector', ->
 
   context 'when circle-ci enviroment', ->
     beforeEach ->
-      @ci = detector.lookup CIRCLECI: 'true'
+      @ci = detector.lookup CI: 'true', CIRCLECI: 'true'
 
     it 'return circle-ci enviroment object', ->
       expect(@ci.name).to.be.equal 'circle-ci'

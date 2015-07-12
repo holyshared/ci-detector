@@ -2,6 +2,8 @@ Base = require('./base')
 readOnly = require('../util').readOnly
 
 class TravisCI extends Base
+  isCurrentEnv: ->
+    @ci && @current
 
 Object.defineProperty TravisCI::, 'name', value: 'travis-ci'
 Object.defineProperty TravisCI::, 'current', get: ->

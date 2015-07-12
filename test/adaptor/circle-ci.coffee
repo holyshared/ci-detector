@@ -3,9 +3,9 @@ describe 'CircleCI', ->
     @env = fixtures.circleCI
     @ci = new CircleCI @env
 
-  describe 'isMatch', ->
+  describe 'isCurrentEnv', ->
     it 'return true', ->
-      expect(@ci.isMatch()).to.be.true
+      expect(@ci.isCurrentEnv()).to.be.true
 
   describe 'branch', ->
     it 'return branch name', ->

@@ -14,7 +14,7 @@ registry = module.exports = {
 
     for name, Adaptor of @adaptors
       adaptor = new Adaptor envReader
-      continue unless adaptor.current
+      continue unless adaptor.isCurrentEnv()
       detectAdaptor = adaptor
       break
     detectAdaptor

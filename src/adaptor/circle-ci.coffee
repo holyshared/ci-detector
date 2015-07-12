@@ -2,6 +2,8 @@ Base = require('./base')
 readOnly = require('../util').readOnly
 
 class CircleCI extends Base
+  isCurrentEnv: ->
+    @ci && @current
 
 Object.defineProperty CircleCI::, 'name', value: 'circle-ci'
 Object.defineProperty CircleCI::, 'current', get: ->
