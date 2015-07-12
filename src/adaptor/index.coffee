@@ -1,5 +1,7 @@
-exports = module.exports
-exports.travisCI = require './travis-ci'
-exports.droneIO = require './drone-io'
-exports.circleCI = require './circle-ci'
-exports.codeship = require './codeship'
+registry = require './registry'
+registry.register 'travis-ci', require './travis-ci'
+registry.register 'drone-io', require './drone-io'
+registry.register 'circle-ci', require './circle-ci'
+registry.register 'codeship', require './codeship'
+
+module.exports = registry

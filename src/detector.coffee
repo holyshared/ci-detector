@@ -5,7 +5,7 @@ detector = (env) ->
   @env = new Env env
   detectAdaptor = null
 
-  for name, Adaptor of adaptors
+  for name, Adaptor of adaptors.adaptors
     adaptor = new Adaptor @env
     continue unless adaptor.current
     detectAdaptor = adaptor
