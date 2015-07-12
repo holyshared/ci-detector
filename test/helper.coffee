@@ -1,6 +1,6 @@
 global.expect = require('chai').expect
 global.detector = require '../lib/detector'
-global.Env = require '../lib/env'
+global.environment = require '../lib/env'
 global.TravisCI = require '../lib/adaptor/travis-ci'
 global.DroneIO = require '../lib/adaptor/drone-io'
 global.CircleCI = require '../lib/adaptor/circle-ci'

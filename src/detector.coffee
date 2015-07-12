@@ -1,8 +1,8 @@
-Env = require './env'
+environment = require './env'
 adaptors = require './adaptor'
 
 detector = (env) ->
-  @env = new Env env
+  @env = environment(env)
   detectAdaptor = null
 
   for name, Adaptor of adaptors.adaptors

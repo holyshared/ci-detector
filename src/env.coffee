@@ -1,9 +1,7 @@
 readOnly = (env, target) ->
   for key, value of env
     Object.defineProperty target, key, value: value
+  target
 
-class Env
-  constructor: (env) ->
-    readOnly Object.create(env), @
-
-module.exports = Env
+module.exports = (env) ->
+  readOnly Object.create(env), {}

@@ -1,6 +1,6 @@
 describe 'TravisCI', ->
   beforeEach ->
-    @env = new Env fixtures.travisCI
+    @env = environment(fixtures.travisCI)
     @travis = new TravisCI @env
 
   describe 'isMatch', ->
@@ -34,7 +34,7 @@ describe 'TravisCI', ->
   describe 'ci', ->
     context 'when CI=true' , ->
       beforeEach ->
-        @env = new Env CI:'true'
+        @env = environment CI:'true'
         @travis = new TravisCI @env
 
       it 'return true', ->
@@ -42,7 +42,7 @@ describe 'TravisCI', ->
 
     context 'when CI=false' , ->
       beforeEach ->
-        @env = new Env CI:'false'
+        @env = environment CI:'false'
         @travis = new TravisCI @env
 
       it 'return false', ->
@@ -51,7 +51,7 @@ describe 'TravisCI', ->
   describe 'current', ->
     context 'when TRAVIS=true' , ->
       beforeEach ->
-        @env = new Env TRAVIS:'true'
+        @env = environment TRAVIS:'true'
         @travis = new TravisCI @env
 
       it 'return true', ->
@@ -59,7 +59,7 @@ describe 'TravisCI', ->
 
     context 'when TRAVIS=false' , ->
       beforeEach ->
-        @env = new Env TRAVIS:'false'
+        @env = environment TRAVIS:'false'
         @travis = new TravisCI @env
 
       it 'return false', ->

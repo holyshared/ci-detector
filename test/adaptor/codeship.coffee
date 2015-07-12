@@ -1,6 +1,6 @@
 describe 'Codeship', ->
   beforeEach ->
-    @env = new Env fixtures.codeship
+    @env = environment fixtures.codeship
     @ci = new Codeship @env
 
   describe 'isMatch', ->
@@ -35,7 +35,7 @@ describe 'Codeship', ->
   describe 'ci', ->
     context 'when CI=true' , ->
       beforeEach ->
-        @env = new Env CI:'true'
+        @env = environment CI:'true'
         @ci = new Codeship @env
 
       it 'return true', ->
@@ -43,7 +43,7 @@ describe 'Codeship', ->
 
     context 'when CI=false' , ->
       beforeEach ->
-        @env = new Env CI:'false'
+        @env = environment CI:'false'
         @ci = new Codeship @env
 
       it 'return false', ->
@@ -52,7 +52,7 @@ describe 'Codeship', ->
   describe 'current', ->
     context 'when CI_NAME=codeship' , ->
       beforeEach ->
-        @env = new Env CI_NAME:'codeship'
+        @env = environment CI_NAME:'codeship'
         @ci = new Codeship @env
 
       it 'return true', ->
@@ -60,7 +60,7 @@ describe 'Codeship', ->
 
     context 'when CIRCLECI=false' , ->
       beforeEach ->
-        @env = new Env CI_NAME:'travis-ci'
+        @env = environment CI_NAME:'travis-ci'
         @ci = new Codeship @env
 
       it 'return false', ->

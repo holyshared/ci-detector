@@ -1,6 +1,6 @@
 describe 'DroneIO', ->
   beforeEach ->
-    @env = new Env fixtures.droneIO
+    @env = environment fixtures.droneIO
     @drone = new DroneIO @env
 
   describe 'isMatch', ->
@@ -35,7 +35,7 @@ describe 'DroneIO', ->
   describe 'ci', ->
     context 'when CI=true' , ->
       beforeEach ->
-        @env = new Env CI:'true'
+        @env = environment CI:'true'
         @drone = new DroneIO @env
 
       it 'return true', ->
@@ -43,7 +43,7 @@ describe 'DroneIO', ->
 
     context 'when CI=false' , ->
       beforeEach ->
-        @env = new Env CI:'false'
+        @env = environment CI:'false'
         @drone = new DroneIO @env
 
       it 'return false', ->
@@ -52,7 +52,7 @@ describe 'DroneIO', ->
   describe 'current', ->
     context 'when DRONE=true' , ->
       beforeEach ->
-        @env = new Env DRONE:'true'
+        @env = environment DRONE:'true'
         @drone = new DroneIO @env
 
       it 'return true', ->
@@ -60,7 +60,7 @@ describe 'DroneIO', ->
 
     context 'when DRONE=false' , ->
       beforeEach ->
-        @env = new Env DRONE:'false'
+        @env = environment DRONE:'false'
         @drone = new DroneIO @env
 
       it 'return false', ->

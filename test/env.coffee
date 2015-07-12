@@ -1,7 +1,7 @@
-describe 'Env', ->
+describe 'environment', ->
   describe 'constructor', ->
     beforeEach ->
-      @env = new Env(foo: 'foo', bar: 'bar')
+      @env = environment(foo: 'foo', bar: 'bar')
     it 'has readonly property', ->
       @env.foo = 'bar'
       expect(@env.foo).to.be.equal 'foo'

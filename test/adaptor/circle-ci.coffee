@@ -1,6 +1,6 @@
 describe 'CircleCI', ->
   beforeEach ->
-    @env = new Env fixtures.circleCI
+    @env = environment fixtures.circleCI
     @ci = new CircleCI @env
 
   describe 'isMatch', ->
@@ -35,7 +35,7 @@ describe 'CircleCI', ->
   describe 'ci', ->
     context 'when CI=true' , ->
       beforeEach ->
-        @env = new Env CI:'true'
+        @env = environment CI:'true'
         @ci = new CircleCI @env
 
       it 'return true', ->
@@ -43,7 +43,7 @@ describe 'CircleCI', ->
 
     context 'when CI=false' , ->
       beforeEach ->
-        @env = new Env CI:'false'
+        @env = environment CI:'false'
         @ci = new CircleCI @env
 
       it 'return false', ->
@@ -52,7 +52,7 @@ describe 'CircleCI', ->
   describe 'current', ->
     context 'when CIRCLECI=true' , ->
       beforeEach ->
-        @env = new Env CIRCLECI:'true'
+        @env = environment CIRCLECI:'true'
         @ci = new CircleCI @env
 
       it 'return true', ->
@@ -60,7 +60,7 @@ describe 'CircleCI', ->
 
     context 'when CIRCLECI=false' , ->
       beforeEach ->
-        @env = new Env CIRCLECI:'false'
+        @env = environment CIRCLECI:'false'
         @ci = new CircleCI @env
 
       it 'return false', ->
