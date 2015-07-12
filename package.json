@@ -9,7 +9,7 @@
     "abstraction"
   ],
   "description": "Detect the CI server environment",
-  "main": "lib/detector.js",
+  "main": "lib/ci-detector.js",
   "scripts": {
     "test": "multi='spec=- mocha-tcov-reporter=- mocha-lcov-reporter=lcov-report.lcov' ./node_modules/.bin/mocha --recursive test",
     "build": "./node_modules/.bin/gulp build",
