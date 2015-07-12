@@ -1,3 +1,8 @@
+readOnly = (env, target) ->
+  for key, value of env
+    Object.defineProperty target, key, value: value
+  target
+
 registry = module.exports = {
   _adaptors: {}
 
@@ -5,8 +10,10 @@ registry = module.exports = {
     @_adaptors[name] = adaptor
 
   lookup: (env) ->
+    envReader = readOnly Object.create(env), {}
+
     for name, Adaptor of @adaptors
-      adaptor = new Adaptor env
+      adaptor = new Adaptor envReader
       continue unless adaptor.current
       detectAdaptor = adaptor
       break
