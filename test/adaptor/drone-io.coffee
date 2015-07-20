@@ -4,8 +4,19 @@ describe 'DroneIO', ->
     @drone = new DroneIO @env
 
   describe 'isCurrentEnv', ->
-    it 'return true', ->
-      expect(@drone.isCurrentEnv()).to.be.true
+    context 'when drone.io enviroment', ->
+      beforeEach ->
+        @drone = new DroneIO DRONE: 'true'
+
+      it 'return true', ->
+        expect(@drone.isCurrentEnv()).to.be.true
+
+    context 'when not drone.io enviroment', ->
+      beforeEach ->
+        @drone = new DroneIO {}
+
+      it 'return false', ->
+        expect(@drone.isCurrentEnv()).to.be.false
 
   describe 'branch', ->
     it 'return branch name', ->

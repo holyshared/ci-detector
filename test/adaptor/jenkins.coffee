@@ -4,8 +4,19 @@ describe 'Jenkins', ->
     @jenkins = new Jenkins @env
 
   describe 'isCurrentEnv', ->
-    it 'return true', ->
-      expect(@jenkins.isCurrentEnv()).to.be.true
+    context 'when jenkins enviroment', ->
+      beforeEach ->
+        @jenkins = new Jenkins JENKINS_URL: 'http://example.com'
+
+      it 'return true', ->
+        expect(@jenkins.isCurrentEnv()).to.be.true
+
+    context 'when not jenkins enviroment', ->
+      beforeEach ->
+        @jenkins = new Jenkins {}
+
+      it 'return false', ->
+        expect(@jenkins.isCurrentEnv()).to.be.false
 
   describe 'branch', ->
     it 'return branch name', ->

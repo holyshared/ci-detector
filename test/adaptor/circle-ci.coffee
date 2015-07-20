@@ -4,8 +4,19 @@ describe 'CircleCI', ->
     @ci = new CircleCI @env
 
   describe 'isCurrentEnv', ->
-    it 'return true', ->
-      expect(@ci.isCurrentEnv()).to.be.true
+    context 'when circle-ci enviroment', ->
+      beforeEach ->
+        @ci = new CircleCI CIRCLECI: 'true'
+
+      it 'return true', ->
+        expect(@ci.isCurrentEnv()).to.be.true
+
+    context 'when not circle-ci enviroment', ->
+      beforeEach ->
+        @ci = new CircleCI {}
+
+      it 'return false', ->
+        expect(@ci.isCurrentEnv()).to.be.false
 
   describe 'branch', ->
     it 'return branch name', ->

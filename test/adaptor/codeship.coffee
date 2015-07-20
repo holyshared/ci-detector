@@ -4,8 +4,20 @@ describe 'Codeship', ->
     @ci = new Codeship @env
 
   describe 'isCurrentEnv', ->
-    it 'return true', ->
-      expect(@ci.isCurrentEnv()).to.be.true
+
+    context 'when codeship enviroment', ->
+      beforeEach ->
+        @ci = new Codeship CI_NAME: 'codeship'
+
+      it 'return true', ->
+        expect(@ci.isCurrentEnv()).to.be.true
+
+    context 'when not codeship enviroment', ->
+      beforeEach ->
+        @ci = new Codeship {}
+
+      it 'return false', ->
+        expect(@ci.isCurrentEnv()).to.be.false
 
   describe 'branch', ->
     it 'return branch name', ->

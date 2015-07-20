@@ -4,8 +4,19 @@ describe 'TravisCI', ->
     @travis = new TravisCI @env
 
   describe 'isCurrentEnv', ->
-    it 'return true', ->
-      expect(@travis.isCurrentEnv()).to.be.true
+    context 'when travis-ci enviroment', ->
+      beforeEach ->
+        @travis = new TravisCI TRAVIS: 'true'
+
+      it 'return true', ->
+        expect(@travis.isCurrentEnv()).to.be.true
+
+    context 'when not travis-ci enviroment', ->
+      beforeEach ->
+        @travis = new TravisCI {}
+
+      it 'return false', ->
+        expect(@travis.isCurrentEnv()).to.be.false
 
   describe 'branch', ->
     it 'return branch name', ->
