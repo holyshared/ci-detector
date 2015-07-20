@@ -8,6 +8,7 @@ registry = module.exports = {
 
   register: (name, adaptor) ->
     @_adaptors[name] = adaptor
+    @['is' + name] = (env) -> (new adaptor(env)).isCurrentEnv()
 
   lookup: (env) ->
     envReader = readOnly Object.create(env), {}

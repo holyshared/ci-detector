@@ -1,35 +1,44 @@
 describe 'ci-detector', ->
-  context 'when travis enviroment', ->
-    beforeEach ->
-      @travis = detector.lookup(CI: 'true', TRAVIS: 'true')
+  describe 'isTravisCI', ->
+    context 'when travis enviroment', ->
+      it 'return true', ->
+        expect(detector.isTravisCI(CI: 'true', TRAVIS: 'true')).to.be.true
+    context 'when not travis enviroment', ->
+      it 'return false', ->
+        expect(detector.isTravisCI({})).to.be.false
 
-    it 'return travis-ci enviroment object', ->
-      expect(@travis.name).to.be.equal 'travis-ci'
+  describe 'lookup', ->
+    context 'when travis enviroment', ->
+      beforeEach ->
+        @travis = detector.lookup(CI: 'true', TRAVIS: 'true')
 
-  context 'when drone.io enviroment', ->
-    beforeEach ->
-      @drone = detector.lookup(CI: 'true', DRONE: 'true')
+      it 'return travis-ci enviroment object', ->
+        expect(@travis.name).to.be.equal 'travis-ci'
 
-    it 'return drone.io enviroment object', ->
-      expect(@drone.name).to.be.equal 'drone.io'
+    context 'when drone.io enviroment', ->
+      beforeEach ->
+        @drone = detector.lookup(CI: 'true', DRONE: 'true')
 
-  context 'when circle-ci enviroment', ->
-    beforeEach ->
-      @ci = detector.lookup CI: 'true', CIRCLECI: 'true'
+      it 'return drone.io enviroment object', ->
+        expect(@drone.name).to.be.equal 'drone.io'
 
-    it 'return circle-ci enviroment object', ->
-      expect(@ci.name).to.be.equal 'circle-ci'
+    context 'when circle-ci enviroment', ->
+      beforeEach ->
+        @ci = detector.lookup CI: 'true', CIRCLECI: 'true'
 
-  context 'when codeship enviroment', ->
-    beforeEach ->
-      @ci = detector.lookup CI:"true", CI_NAME: "codeship"
+      it 'return circle-ci enviroment object', ->
+        expect(@ci.name).to.be.equal 'circle-ci'
 
-    it 'return codeship enviroment object', ->
-      expect(@ci.name).to.be.equal 'codeship'
+    context 'when codeship enviroment', ->
+      beforeEach ->
+        @ci = detector.lookup CI:"true", CI_NAME: "codeship"
 
-  context 'when jenkins enviroment', ->
-    beforeEach ->
-      @ci = detector.lookup JENKINS_URL: "http://example.com"
+      it 'return codeship enviroment object', ->
+        expect(@ci.name).to.be.equal 'codeship'
 
-    it 'return jenkins enviroment object', ->
-      expect(@ci.name).to.be.equal 'jenkins'
+    context 'when jenkins enviroment', ->
+      beforeEach ->
+        @ci = detector.lookup JENKINS_URL: "http://example.com"
+
+      it 'return jenkins enviroment object', ->
+        expect(@ci.name).to.be.equal 'jenkins'

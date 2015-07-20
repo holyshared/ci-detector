@@ -1,6 +1,6 @@
 module.exports =
-  'travis-ci': require './travis-ci'
-  'drone-io': require './drone-io'
-  'circle-ci': require './circle-ci'
-  'codeship': require './codeship'
-  'jenkins': require './jenkins'
+  'TravisCI': require './travis-ci'
+  'DroneIO': require './drone-io'
+  'CircleCI': require './circle-ci'
+  'Codeship': require './codeship'
+  'Jenkins': require './jenkins'
