@@ -30,38 +30,3 @@ describe 'Codeship', ->
   describe 'buildJobId', ->
     it 'return build job id', ->
       expect(@ci.buildId).to.be.equal '1'
-
-
-  describe 'ci', ->
-    context 'when CI=true' , ->
-      beforeEach ->
-        @env = CI:'true'
-        @ci = new Codeship @env
-
-      it 'return true', ->
-        expect(@ci.ci).to.be.true
-
-    context 'when CI=false' , ->
-      beforeEach ->
-        @env = CI:'false'
-        @ci = new Codeship @env
-
-      it 'return false', ->
-        expect(@ci.ci).to.be.false
-
-  describe 'current', ->
-    context 'when CI_NAME=codeship' , ->
-      beforeEach ->
-        @env = CI_NAME:'codeship'
-        @ci = new Codeship @env
-
-      it 'return true', ->
-        expect(@ci.current).to.be.true
-
-    context 'when CIRCLECI=false' , ->
-      beforeEach ->
-        @env = CI_NAME:'travis-ci'
-        @ci = new Codeship @env
-
-      it 'return false', ->
-        expect(@ci.current).to.be.false

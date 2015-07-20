@@ -30,37 +30,3 @@ describe 'TravisCI', ->
   describe 'buildJobId', ->
     it 'return build job id', ->
       expect(@travis.buildJobId).to.be.equal '3'
-
-  describe 'ci', ->
-    context 'when CI=true' , ->
-      beforeEach ->
-        @env = CI:'true'
-        @travis = new TravisCI @env
-
-      it 'return true', ->
-        expect(@travis.ci).to.be.true
-
-    context 'when CI=false' , ->
-      beforeEach ->
-        @env = CI:'false'
-        @travis = new TravisCI @env
-
-      it 'return false', ->
-        expect(@travis.ci).to.be.false
-
-  describe 'current', ->
-    context 'when TRAVIS=true' , ->
-      beforeEach ->
-        @env = TRAVIS:'true'
-        @travis = new TravisCI @env
-
-      it 'return true', ->
-        expect(@travis.current).to.be.true
-
-    context 'when TRAVIS=false' , ->
-      beforeEach ->
-        @env = TRAVIS:'false'
-        @travis = new TravisCI @env
-
-      it 'return false', ->
-        expect(@travis.current).to.be.false

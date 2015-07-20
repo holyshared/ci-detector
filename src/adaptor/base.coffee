@@ -4,7 +4,4 @@ class Base
   isCurrentEnv: ->
     false
 
-Object.defineProperty Base::, 'ci', get: ->
-  if @env.CI == 'true' then true else false
-
 module.exports = Base

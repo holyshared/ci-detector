@@ -6,8 +6,6 @@ class Jenkins extends Base
     if @env.JENKINS_URL == undefined then false else true
 
 Object.defineProperty Jenkins::, 'name', value: 'jenkins'
-Object.defineProperty Jenkins::, 'current', get: ->
-  @isCurrentEnv()
 
 readOnly Jenkins::, {
   branch: 'GIT_BRANCH'

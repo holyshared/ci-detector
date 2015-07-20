@@ -30,38 +30,3 @@ describe 'DroneIO', ->
   describe 'buildJobId', ->
     it 'return build job id', ->
       expect(@drone.buildId).to.be.equal '1'
-
-
-  describe 'ci', ->
-    context 'when CI=true' , ->
-      beforeEach ->
-        @env = CI:'true'
-        @drone = new DroneIO @env
-
-      it 'return true', ->
-        expect(@drone.ci).to.be.true
-
-    context 'when CI=false' , ->
-      beforeEach ->
-        @env = CI:'false'
-        @drone = new DroneIO @env
-
-      it 'return false', ->
-        expect(@drone.ci).to.be.false
-
-  describe 'current', ->
-    context 'when DRONE=true' , ->
-      beforeEach ->
-        @env = DRONE:'true'
-        @drone = new DroneIO @env
-
-      it 'return true', ->
-        expect(@drone.current).to.be.true
-
-    context 'when DRONE=false' , ->
-      beforeEach ->
-        @env = DRONE:'false'
-        @drone = new DroneIO @env
-
-      it 'return false', ->
-        expect(@drone.current).to.be.false

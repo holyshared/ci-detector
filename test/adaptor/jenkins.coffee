@@ -30,19 +30,3 @@ describe 'Jenkins', ->
   describe 'buildJobId', ->
     it 'return build job id', ->
       expect(@jenkins.buildJobId).to.be.equal '1'
-
-  describe 'current', ->
-    context 'when have JENKINS_URL' , ->
-      beforeEach ->
-        @env = JENKINS_URL:'http://example.com'
-        @jenkins = new Jenkins @env
-
-      it 'return true', ->
-        expect(@jenkins.current).to.be.true
-
-    context 'when have not JENKINS_URL' , ->
-      beforeEach ->
-        @jenkins = new Jenkins {}
-
-      it 'return false', ->
-        expect(@jenkins.current).to.be.false

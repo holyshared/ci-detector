@@ -1,18 +1,11 @@
-#Support?
-#DRONE_REPO_SLUG
-#DRONE_BUILD_URL
-#DRONE_BUILD_DIR
-
 Base = require('./base')
 readOnly = require('../util').readOnly
 
 class DroneIO extends Base
   isCurrentEnv: ->
-    @ci && @current
+    if @env.DRONE == 'true' then true else false
 
 Object.defineProperty DroneIO::, 'name', value: 'drone.io'
-Object.defineProperty DroneIO::, 'current', get: ->
-  if @env.DRONE == 'true' then true else false
 
 readOnly DroneIO::, {
   branch: 'DRONE_BRANCH',
