@@ -3,3 +3,4 @@ module.exports =
   'drone-io': require './drone-io'
   'circle-ci': require './circle-ci'
   'codeship': require './codeship'
+  'jenkins': require './jenkins'
