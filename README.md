@@ -15,11 +15,45 @@ You do not need to worry about the difference of environment variables of ci ser
 
 ```javascript
 var util = require('util');
-var detector = require('detector');
-var env = detector(process.env);
-util.log(env.name); //travis
+var detector = require('ci-detector');
+var env = detector.lookup(process.env);
+util.log(env.name); //travis-ci
 util.log(env.branch); //master
 util.log(env.commit); //1d3b5371ef1851caf256773efb9deb9e27875272
+```
+
+Check the environment
+-----------------------------------------
+
+You can check the environment as follows.  
+Supported method isTravisCI, isCircleCI, isDroneIO, isCodeship, isJenkins.
+
+```javascript
+var util = require('util');
+var detector = require('ci-detector');
+
+console.log(detector.isTravisCI(process.env)); //true
+console.log(detector.isCircleCI(process.env)); //false
+console.log(detector.isDroneIO(process.env)); //false
+console.log(detector.isCodeship(process.env)); //false
+console.log(detector.isJenkins(process.env)); //false
+```
+
+Access to environment variables
+-----------------------------------------
+
+You can check the environment variable in the **has** method.  
+To get the environment variables you can use the **get** method.
+
+```javascript
+var util = require('util');
+var detector = require('ci-detector');
+var env = detector.lookup(process.env);
+
+if (env.has('CI', 'CIRCLECI')) {
+  util.log(env.get('CI')); //true
+  util.log(env.get('CIRCLECI')); //true
+}
 ```
 
 Support ci services

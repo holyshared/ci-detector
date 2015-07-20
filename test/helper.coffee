@@ -1,15 +1,16 @@
 global.expect = require('chai').expect
-global.detector = require '../lib/detector'
-global.Env = require '../lib/env'
-global.Travis = require '../lib/adaptor/travis'
-global.Drone = require '../lib/adaptor/drone'
-global.Circle = require '../lib/adaptor/circle'
+global.detector = require '../lib/ci-detector'
+global.TravisCI = require '../lib/adaptor/travis-ci'
+global.DroneIO = require '../lib/adaptor/drone-io'
+global.CircleCI = require '../lib/adaptor/circle-ci'
 global.Codeship = require '../lib/adaptor/codeship'
+global.Jenkins = require '../lib/adaptor/jenkins'
 
 fixtures = {}
-fixtures.travis = require './fixtures/travis'
-fixtures.drone = require './fixtures/drone'
-fixtures.circle = require './fixtures/circle'
+fixtures.travisCI = require './fixtures/travis-ci'
+fixtures.droneIO = require './fixtures/drone-io'
+fixtures.circleCI = require './fixtures/circle-ci'
 fixtures.codeship = require './fixtures/codeship'
+fixtures.jenkins = require './fixtures/jenkins'
 
 global.fixtures = fixtures

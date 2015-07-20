@@ -1,20 +1,19 @@
-describe 'Codeship', ->
+describe 'CircleCI', ->
   beforeEach ->
-    @env = fixtures.codeship
-    @ci = new Codeship @env
+    @env = fixtures.circleCI
+    @ci = new CircleCI @env
 
   describe 'isCurrentEnv', ->
-
-    context 'when codeship enviroment', ->
+    context 'when circle-ci enviroment', ->
       beforeEach ->
-        @ci = new Codeship CI_NAME: 'codeship'
+        @ci = new CircleCI CIRCLECI: 'true'
 
       it 'return true', ->
         expect(@ci.isCurrentEnv()).to.be.true
 
-    context 'when not codeship enviroment', ->
+    context 'when not circle-ci enviroment', ->
       beforeEach ->
-        @ci = new Codeship {}
+        @ci = new CircleCI {}
 
       it 'return false', ->
         expect(@ci.isCurrentEnv()).to.be.false
