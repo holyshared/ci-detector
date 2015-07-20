@@ -22,6 +22,23 @@ util.log(env.branch); //master
 util.log(env.commit); //1d3b5371ef1851caf256773efb9deb9e27875272
 ```
 
+Check the environment
+-----------------------------------------
+
+You can check the environment as follows.  
+Supported method isTravisCI, isCircleCI, isDroneIO, isCodeship, isJenkins.
+
+```javascript
+var util = require('util');
+var detector = require('ci-detector');
+
+console.log(detector.isTravisCI(process.env)); //true
+console.log(detector.isCircleCI(process.env)); //false
+console.log(detector.isDroneIO(process.env)); //false
+console.log(detector.isCodeship(process.env)); //false
+console.log(detector.isJenkins(process.env)); //false
+```
+
 Access to environment variables
 -----------------------------------------
 
