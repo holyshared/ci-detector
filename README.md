@@ -22,6 +22,23 @@ util.log(env.branch); //master
 util.log(env.commit); //1d3b5371ef1851caf256773efb9deb9e27875272
 ```
 
+Access to environment variables
+-----------------------------------------
+
+You can check the environment variable in the **has** method.  
+To get the environment variables you can use the **get** method.
+
+```javascript
+var util = require('util');
+var detector = require('ci-detector');
+var env = detector.lookup(process.env);
+
+if (env.has('CI', 'CIRCLECI')) {
+  util.log(env.get('CI')); //true
+  util.log(env.get('CIRCLECI')); //true
+}
+```
+
 Support ci services
 -----------------------------------------
 * [Travis CI](https://travis-ci.org/)
