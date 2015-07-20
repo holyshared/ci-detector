@@ -5,7 +5,8 @@ CI_NAME = "codeship"
 
 class Codeship extends Base
   isCurrentEnv: ->
-    if @env.CI_NAME == CI_NAME then true else false
+    false unless @has('CI_NAME')
+    @get('CI_NAME') == CI_NAME
 
 Object.defineProperty Codeship::, 'name', value: CI_NAME
 

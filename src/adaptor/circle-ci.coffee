@@ -3,7 +3,8 @@ readOnly = require('../util').readOnly
 
 class CircleCI extends Base
   isCurrentEnv: ->
-    if @env.CIRCLECI == 'true' then true else false
+    return false unless @has('CIRCLECI')
+    @get('CIRCLECI') == 'true'
 
 Object.defineProperty CircleCI::, 'name', value: 'circle-ci'
 

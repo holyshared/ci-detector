@@ -3,7 +3,8 @@ readOnly = require('../util').readOnly
 
 class DroneIO extends Base
   isCurrentEnv: ->
-    if @env.DRONE == 'true' then true else false
+    return false unless @has('DRONE')
+    @get('DRONE') == 'true'
 
 Object.defineProperty DroneIO::, 'name', value: 'drone.io'
 

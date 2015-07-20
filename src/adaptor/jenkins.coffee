@@ -3,7 +3,7 @@ readOnly = require('../util').readOnly
 
 class Jenkins extends Base
   isCurrentEnv: ->
-    if @env.JENKINS_URL == undefined then false else true
+    @has('JENKINS_URL')
 
 Object.defineProperty Jenkins::, 'name', value: 'jenkins'
 

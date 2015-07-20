@@ -3,7 +3,8 @@ readOnly = require('../util').readOnly
 
 class TravisCI extends Base
   isCurrentEnv: ->
-    if @env.TRAVIS == 'true' then true else false
+    return false unless @has('TRAVIS')
+    @get('TRAVIS') == 'true'
 
 Object.defineProperty TravisCI::, 'name', value: 'travis-ci'
 
