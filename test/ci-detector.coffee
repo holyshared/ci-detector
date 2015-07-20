@@ -26,3 +26,10 @@ describe 'ci-detector', ->
 
     it 'return codeship enviroment object', ->
       expect(@ci.name).to.be.equal 'codeship'
+
+  context 'when jenkins enviroment', ->
+    beforeEach ->
+      @ci = detector.lookup JENKINS_URL: "http://example.com"
+
+    it 'return jenkins enviroment object', ->
+      expect(@ci.name).to.be.equal 'jenkins'
