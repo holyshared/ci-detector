@@ -39,7 +39,7 @@
     "mocha-lcov-reporter": "~0.0.2",
     "mocha-multi": "~0.7.0",
     "mocha-tcov-reporter": "^0.1.0",
-    "sinon": "~1.15"
+    "sinon": "^1.16.1"
   },
   "config": {
     "blanket": {
